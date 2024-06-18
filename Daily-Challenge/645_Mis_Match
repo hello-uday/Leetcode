@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        int sum = (nums.size() * (nums.size()+1)/2);
+        vector<int> temp;
+        int s=0,l;
+        for(auto i:nums){
+            s+=i;
+            if(count(nums.begin(),nums.end(),i)==2){
+                l=i;
+            }
+        }
+        return {l,(sum-s)+l};
+    }
+};
